@@ -18,7 +18,7 @@ function postTweet(quote) {
   });
 }
 
-cron.schedule("*/30 * * * *", () => {
+cron.schedule("*/2 * * * *", () => {
   superagent
     .get("https://michael-scott-quotes.herokuapp.com/quote")
     .then((quote) => {

@@ -22,7 +22,7 @@ cron.schedule("*/60 * * * *", () => {
   superagent
     .get("https://michael-scott-quotes.herokuapp.com/quote")
     .then((quote) => {
-      const jumbledUp = uniencode(scramble(quote.body.quote));
+      const jumbledUp = scramble(quote.body.quote);
       postTweet(jumbledUp);
     })
     .catch(console.error);
